@@ -14,7 +14,6 @@ module LS_controller (
   always_comb begin
     case (func3)
       b: begin
-        $display("byte operatio ");
         case (address)
           2'b00: begin
             mask = 4'b0001;
@@ -40,7 +39,6 @@ module LS_controller (
         load_ctrl = 3'b000;
       end
       h: begin
-        $display("halfword operation %d  %h", address[1], rdata2);
         case (address[1])
           0: begin
             mask = 4'b0011;
@@ -58,7 +56,6 @@ module LS_controller (
         load_ctrl = 3'b001;
       end
       w: begin
-        $display("word operation ");
         mask = 4'b1111;
         wdata_mem = rdata2;
         load_ctrl = 3'b010;

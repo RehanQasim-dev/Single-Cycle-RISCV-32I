@@ -1,6 +1,6 @@
 # vsim -voptargs="+acc" -c RISC_V_tb -do "run -all; exit" 
-# Start time: 00:41:02 on Mar 30,2023
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Start time: 01:37:50 on Mar 30,2023
+# ** Note: (vsim-8009) Loading existing optimized design _opt
 # //  ModelSim SE-64 10.6d Feb 24 2018
 # //
 # //  Copyright 1991-2018 Mentor Graphics Corporation
@@ -27,35 +27,218 @@
 # Loading work.data_mem(fast)
 # Loading work.Branch_block(fast)
 # run -all
-# PC=xxxxxxxx rdata1=xxxxxxxx rdata2=xxxxxxxx Imm=xxxxxxxx wb_sel=xx A_sel=x bsel=x
-# wdata=xxxxxxxx regfile=0000000a datamem=xxxxxxxx aluout=         x aluctrl= x
-# -------------------------------------------------------------------------
-# PC=00000000 rdata1=00000000 rdata2=00000000 Imm=00005000 wb_sel=01 A_sel=x bsel=1
-# wdata=00005000 regfile=00005000 datamem=00000000 aluout=     20480 aluctrl=10
-# -------------------------------------------------------------------------
-# byte operatio 
-# byte operatio 
-# byte operatio 
-# PC=00000004 rdata1=00005682 rdata2=00000016 Imm=00000682 wb_sel=01 A_sel=1 bsel=1
-# wdata=00005d04 regfile=00005682 datamem=00000000 aluout=     23812 aluctrl= 0
-# -------------------------------------------------------------------------
-# halfword operation 0  00005682
-# halfword operation 1  00005682
-# halfword operation 1  00005682
-# mask=1100 datawr=56820000
-# mask2=1
-# PC=00000008 rdata1=00000000 rdata2=00005682 Imm=00000003 wb_sel=xx A_sel=1 bsel=1
-# wdata=xxxxxxxx regfile=00005682 datamem=56820000 aluout=         3 aluctrl= 0
-# -------------------------------------------------------------------------
-# word operation 
-# word operation 
-# PC=0000000c rdata1=00000000 rdata2=56820000 Imm=00000003 wb_sel=10 A_sel=1 bsel=1
-# wdata=56820000 regfile=56820000 datamem=56820000 aluout=         3 aluctrl= 0
-# -------------------------------------------------------------------------
-# PC=00000010 rdata1=xxxxxxxx rdata2=xxxxxxxx Imm=xxxxxxxx wb_sel=xx A_sel=1 bsel=x
-# wdata=xxxxxxxx regfile=56820000 datamem=56820000 aluout=         x aluctrl= 0
-# -------------------------------------------------------------------------
+# PC=         x rdata1=         x rdata2=         x Imm=         x wb_sel=xx A_sel=x bsel=x
+# wdata=xxxxxxxx factorial=         3 num=         7 aluout=         x aluctrl= x
+# PC=         0 rdata1=         0 rdata2=         6 Imm=         4 wb_sel=01 A_sel=1 bsel=1
+# wdata=00000004 factorial=         3 num=         4 aluout=         4 aluctrl= 0
+# PC=         4 rdata1=         0 rdata2=         2 Imm=         1 wb_sel=01 A_sel=1 bsel=1
+# wdata=00000001 factorial=         1 num=         4 aluout=         1 aluctrl= 0
+# PC=         8 rdata1=         0 rdata2=         0 Imm=         0 wb_sel=01 A_sel=1 bsel=1
+# wdata=00000000 factorial=         1 num=         4 aluout=         0 aluctrl= 0
+# PC=        12 rdata1=         0 rdata2=        22 Imm=         2 wb_sel=01 A_sel=1 bsel=1
+# wdata=00000002 factorial=         1 num=         4 aluout=         2 aluctrl= 0
+# PC=        16 rdata1=         4 rdata2=         2 Imm=        40 wb_sel=xx A_sel=0 bsel=1
+# wdata=xxxxxxxx factorial=         1 num=         4 aluout=        56 aluctrl= 0
+# PC=        20 rdata1=         2 rdata2=         0 Imm=         0 wb_sel=01 A_sel=1 bsel=1
+# wdata=00000002 factorial=         1 num=         4 aluout=         2 aluctrl= 0
+# PC=        24 rdata1=         2 rdata2=         0 Imm=        16 wb_sel=xx A_sel=0 bsel=1
+# wdata=xxxxxxxx factorial=         1 num=         4 aluout=        40 aluctrl= 0
+# default here!! 101100
+# PC=        28 rdata1=         1 rdata2=         1 Imm=         x wb_sel=01 A_sel=1 bsel=0
+# wdata=00000002 factorial=         1 num=         4 aluout=         2 aluctrl= 0
+# PC=        32 rdata1=         1 rdata2=         x Imm=4294967295 wb_sel=01 A_sel=1 bsel=1
+# wdata=00000000 factorial=         1 num=         4 aluout=         0 aluctrl= 0
+# PC=        36 rdata1=         x rdata2=         3 Imm=4294967284 wb_sel=00 A_sel=0 bsel=1
+# wdata=00000028 factorial=         1 num=         4 aluout=        24 aluctrl= 0
+# PC=        24 rdata1=         1 rdata2=         0 Imm=        16 wb_sel=xx A_sel=0 bsel=1
+# wdata=xxxxxxxx factorial=         1 num=         4 aluout=        40 aluctrl= 0
+# default here!! 101100
+# PC=        28 rdata1=         2 rdata2=         1 Imm=         x wb_sel=01 A_sel=1 bsel=0
+# wdata=00000003 factorial=         1 num=         4 aluout=         3 aluctrl= 0
+# PC=        32 rdata1=         0 rdata2=         x Imm=4294967295 wb_sel=01 A_sel=1 bsel=1
+# wdata=ffffffff factorial=         1 num=         4 aluout=4294967295 aluctrl= 0
+# PC=        36 rdata1=         x rdata2=         3 Imm=4294967284 wb_sel=00 A_sel=0 bsel=1
+# wdata=00000028 factorial=         1 num=         4 aluout=        24 aluctrl= 0
+# PC=        24 rdata1=         0 rdata2=         0 Imm=        16 wb_sel=xx A_sel=0 bsel=1
+# wdata=xxxxxxxx factorial=         1 num=         4 aluout=        40 aluctrl= 0
+# PC=        40 rdata1=         2 rdata2=         0 Imm=         0 wb_sel=01 A_sel=1 bsel=1
+# wdata=00000002 factorial=         2 num=         4 aluout=         2 aluctrl= 0
+# PC=        44 rdata1=         0 rdata2=         0 Imm=         0 wb_sel=01 A_sel=1 bsel=1
+# wdata=00000000 factorial=         2 num=         4 aluout=         0 aluctrl= 0
+# PC=        48 rdata1=         3 rdata2=         2 Imm=         1 wb_sel=01 A_sel=1 bsel=1
+# wdata=00000004 factorial=         2 num=         4 aluout=         4 aluctrl= 0
+# PC=        52 rdata1=         x rdata2=         x Imm=4294967260 wb_sel=00 A_sel=0 bsel=1
+# wdata=00000038 factorial=         2 num=         4 aluout=        16 aluctrl= 0
+# PC=        16 rdata1=         4 rdata2=         3 Imm=        40 wb_sel=xx A_sel=0 bsel=1
+# wdata=xxxxxxxx factorial=         2 num=         4 aluout=        56 aluctrl= 0
+# PC=        20 rdata1=         3 rdata2=         0 Imm=         0 wb_sel=01 A_sel=1 bsel=1
+# wdata=00000003 factorial=         2 num=         4 aluout=         3 aluctrl= 0
+# PC=        24 rdata1=         3 rdata2=         0 Imm=        16 wb_sel=xx A_sel=0 bsel=1
+# wdata=xxxxxxxx factorial=         2 num=         4 aluout=        40 aluctrl= 0
+# default here!! 101100
+# PC=        28 rdata1=         2 rdata2=         2 Imm=         x wb_sel=01 A_sel=1 bsel=0
+# wdata=00000004 factorial=         2 num=         4 aluout=         4 aluctrl= 0
+# PC=        32 rdata1=         2 rdata2=         x Imm=4294967295 wb_sel=01 A_sel=1 bsel=1
+# wdata=00000001 factorial=         2 num=         4 aluout=         1 aluctrl= 0
+# PC=        36 rdata1=         x rdata2=         3 Imm=4294967284 wb_sel=00 A_sel=0 bsel=1
+# wdata=00000028 factorial=         2 num=         4 aluout=        24 aluctrl= 0
+# PC=        24 rdata1=         2 rdata2=         0 Imm=        16 wb_sel=xx A_sel=0 bsel=1
+# wdata=xxxxxxxx factorial=         2 num=         4 aluout=        40 aluctrl= 0
+# default here!! 101100
+# PC=        28 rdata1=         4 rdata2=         2 Imm=         x wb_sel=01 A_sel=1 bsel=0
+# wdata=00000006 factorial=         2 num=         4 aluout=         6 aluctrl= 0
+# PC=        32 rdata1=         1 rdata2=         x Imm=4294967295 wb_sel=01 A_sel=1 bsel=1
+# wdata=00000000 factorial=         2 num=         4 aluout=         0 aluctrl= 0
+# PC=        36 rdata1=         x rdata2=         3 Imm=4294967284 wb_sel=00 A_sel=0 bsel=1
+# wdata=00000028 factorial=         2 num=         4 aluout=        24 aluctrl= 0
+# PC=        24 rdata1=         1 rdata2=         0 Imm=        16 wb_sel=xx A_sel=0 bsel=1
+# wdata=xxxxxxxx factorial=         2 num=         4 aluout=        40 aluctrl= 0
+# default here!! 101100
+# PC=        28 rdata1=         6 rdata2=         2 Imm=         x wb_sel=01 A_sel=1 bsel=0
+# wdata=00000008 factorial=         2 num=         4 aluout=         8 aluctrl= 0
+# PC=        32 rdata1=         0 rdata2=         x Imm=4294967295 wb_sel=01 A_sel=1 bsel=1
+# wdata=ffffffff factorial=         2 num=         4 aluout=4294967295 aluctrl= 0
+# PC=        36 rdata1=         x rdata2=         3 Imm=4294967284 wb_sel=00 A_sel=0 bsel=1
+# wdata=00000028 factorial=         2 num=         4 aluout=        24 aluctrl= 0
+# PC=        24 rdata1=         0 rdata2=         0 Imm=        16 wb_sel=xx A_sel=0 bsel=1
+# wdata=xxxxxxxx factorial=         2 num=         4 aluout=        40 aluctrl= 0
+# PC=        40 rdata1=         6 rdata2=         0 Imm=         0 wb_sel=01 A_sel=1 bsel=1
+# wdata=00000006 factorial=         6 num=         4 aluout=         6 aluctrl= 0
+# PC=        44 rdata1=         0 rdata2=         0 Imm=         0 wb_sel=01 A_sel=1 bsel=1
+# wdata=00000000 factorial=         6 num=         4 aluout=         0 aluctrl= 0
+# PC=        48 rdata1=         4 rdata2=         2 Imm=         1 wb_sel=01 A_sel=1 bsel=1
+# wdata=00000005 factorial=         6 num=         4 aluout=         5 aluctrl= 0
+# PC=        52 rdata1=         x rdata2=         x Imm=4294967260 wb_sel=00 A_sel=0 bsel=1
+# wdata=00000038 factorial=         6 num=         4 aluout=        16 aluctrl= 0
+# PC=        16 rdata1=         4 rdata2=         4 Imm=        40 wb_sel=xx A_sel=0 bsel=1
+# wdata=xxxxxxxx factorial=         6 num=         4 aluout=        56 aluctrl= 0
+# PC=        20 rdata1=         4 rdata2=         0 Imm=         0 wb_sel=01 A_sel=1 bsel=1
+# wdata=00000004 factorial=         6 num=         4 aluout=         4 aluctrl= 0
+# PC=        24 rdata1=         4 rdata2=         0 Imm=        16 wb_sel=xx A_sel=0 bsel=1
+# wdata=xxxxxxxx factorial=         6 num=         4 aluout=        40 aluctrl= 0
+# default here!! 101100
+# PC=        28 rdata1=         6 rdata2=         6 Imm=         x wb_sel=01 A_sel=1 bsel=0
+# wdata=0000000c factorial=         6 num=         4 aluout=        12 aluctrl= 0
+# PC=        32 rdata1=         3 rdata2=         x Imm=4294967295 wb_sel=01 A_sel=1 bsel=1
+# wdata=00000002 factorial=         6 num=         4 aluout=         2 aluctrl= 0
+# PC=        36 rdata1=         x rdata2=         3 Imm=4294967284 wb_sel=00 A_sel=0 bsel=1
+# wdata=00000028 factorial=         6 num=         4 aluout=        24 aluctrl= 0
+# PC=        24 rdata1=         3 rdata2=         0 Imm=        16 wb_sel=xx A_sel=0 bsel=1
+# wdata=xxxxxxxx factorial=         6 num=         4 aluout=        40 aluctrl= 0
+# default here!! 101100
+# PC=        28 rdata1=        12 rdata2=         6 Imm=         x wb_sel=01 A_sel=1 bsel=0
+# wdata=00000012 factorial=         6 num=         4 aluout=        18 aluctrl= 0
+# PC=        32 rdata1=         2 rdata2=         x Imm=4294967295 wb_sel=01 A_sel=1 bsel=1
+# wdata=00000001 factorial=         6 num=         4 aluout=         1 aluctrl= 0
+# PC=        36 rdata1=         x rdata2=         3 Imm=4294967284 wb_sel=00 A_sel=0 bsel=1
+# wdata=00000028 factorial=         6 num=         4 aluout=        24 aluctrl= 0
+# PC=        24 rdata1=         2 rdata2=         0 Imm=        16 wb_sel=xx A_sel=0 bsel=1
+# wdata=xxxxxxxx factorial=         6 num=         4 aluout=        40 aluctrl= 0
+# default here!! 101100
+# PC=        28 rdata1=        18 rdata2=         6 Imm=         x wb_sel=01 A_sel=1 bsel=0
+# wdata=00000018 factorial=         6 num=         4 aluout=        24 aluctrl= 0
+# PC=        32 rdata1=         1 rdata2=         x Imm=4294967295 wb_sel=01 A_sel=1 bsel=1
+# wdata=00000000 factorial=         6 num=         4 aluout=         0 aluctrl= 0
+# PC=        36 rdata1=         x rdata2=         3 Imm=4294967284 wb_sel=00 A_sel=0 bsel=1
+# wdata=00000028 factorial=         6 num=         4 aluout=        24 aluctrl= 0
+# PC=        24 rdata1=         1 rdata2=         0 Imm=        16 wb_sel=xx A_sel=0 bsel=1
+# wdata=xxxxxxxx factorial=         6 num=         4 aluout=        40 aluctrl= 0
+# default here!! 101100
+# PC=        28 rdata1=        24 rdata2=         6 Imm=         x wb_sel=01 A_sel=1 bsel=0
+# wdata=0000001e factorial=         6 num=         4 aluout=        30 aluctrl= 0
+# PC=        32 rdata1=         0 rdata2=         x Imm=4294967295 wb_sel=01 A_sel=1 bsel=1
+# wdata=ffffffff factorial=         6 num=         4 aluout=4294967295 aluctrl= 0
+# PC=        36 rdata1=         x rdata2=         3 Imm=4294967284 wb_sel=00 A_sel=0 bsel=1
+# wdata=00000028 factorial=         6 num=         4 aluout=        24 aluctrl= 0
+# PC=        24 rdata1=         0 rdata2=         0 Imm=        16 wb_sel=xx A_sel=0 bsel=1
+# wdata=xxxxxxxx factorial=         6 num=         4 aluout=        40 aluctrl= 0
+# PC=        40 rdata1=        24 rdata2=         0 Imm=         0 wb_sel=01 A_sel=1 bsel=1
+# wdata=00000018 factorial=        24 num=         4 aluout=        24 aluctrl= 0
+# PC=        44 rdata1=         0 rdata2=         0 Imm=         0 wb_sel=01 A_sel=1 bsel=1
+# wdata=00000000 factorial=        24 num=         4 aluout=         0 aluctrl= 0
+# PC=        48 rdata1=         5 rdata2=         2 Imm=         1 wb_sel=01 A_sel=1 bsel=1
+# wdata=00000006 factorial=        24 num=         4 aluout=         6 aluctrl= 0
+# PC=        52 rdata1=         x rdata2=         x Imm=4294967260 wb_sel=00 A_sel=0 bsel=1
+# wdata=00000038 factorial=        24 num=         4 aluout=        16 aluctrl= 0
+# PC=        16 rdata1=         4 rdata2=         5 Imm=        40 wb_sel=xx A_sel=0 bsel=1
+# wdata=xxxxxxxx factorial=        24 num=         4 aluout=        56 aluctrl= 0
+# PC=        56 rdata1=         0 rdata2=         0 Imm=         0 wb_sel=00 A_sel=0 bsel=1
+# wdata=0000003c factorial=        24 num=         4 aluout=        56 aluctrl= 0
+# PC=        56 rdata1=         0 rdata2=         0 Imm=         0 wb_sel=00 A_sel=0 bsel=1
+# wdata=0000003c factorial=        24 num=         4 aluout=        56 aluctrl= 0
+# PC=        56 rdata1=         0 rdata2=         0 Imm=         0 wb_sel=00 A_sel=0 bsel=1
+# wdata=0000003c factorial=        24 num=         4 aluout=        56 aluctrl= 0
+# PC=        56 rdata1=         0 rdata2=         0 Imm=         0 wb_sel=00 A_sel=0 bsel=1
+# wdata=0000003c factorial=        24 num=         4 aluout=        56 aluctrl= 0
+# PC=        56 rdata1=         0 rdata2=         0 Imm=         0 wb_sel=00 A_sel=0 bsel=1
+# wdata=0000003c factorial=        24 num=         4 aluout=        56 aluctrl= 0
+# PC=        56 rdata1=         0 rdata2=         0 Imm=         0 wb_sel=00 A_sel=0 bsel=1
+# wdata=0000003c factorial=        24 num=         4 aluout=        56 aluctrl= 0
+# PC=        56 rdata1=         0 rdata2=         0 Imm=         0 wb_sel=00 A_sel=0 bsel=1
+# wdata=0000003c factorial=        24 num=         4 aluout=        56 aluctrl= 0
+# PC=        56 rdata1=         0 rdata2=         0 Imm=         0 wb_sel=00 A_sel=0 bsel=1
+# wdata=0000003c factorial=        24 num=         4 aluout=        56 aluctrl= 0
+# PC=        56 rdata1=         0 rdata2=         0 Imm=         0 wb_sel=00 A_sel=0 bsel=1
+# wdata=0000003c factorial=        24 num=         4 aluout=        56 aluctrl= 0
+# PC=        56 rdata1=         0 rdata2=         0 Imm=         0 wb_sel=00 A_sel=0 bsel=1
+# wdata=0000003c factorial=        24 num=         4 aluout=        56 aluctrl= 0
+# PC=        56 rdata1=         0 rdata2=         0 Imm=         0 wb_sel=00 A_sel=0 bsel=1
+# wdata=0000003c factorial=        24 num=         4 aluout=        56 aluctrl= 0
+# PC=        56 rdata1=         0 rdata2=         0 Imm=         0 wb_sel=00 A_sel=0 bsel=1
+# wdata=0000003c factorial=        24 num=         4 aluout=        56 aluctrl= 0
+# PC=        56 rdata1=         0 rdata2=         0 Imm=         0 wb_sel=00 A_sel=0 bsel=1
+# wdata=0000003c factorial=        24 num=         4 aluout=        56 aluctrl= 0
+# PC=        56 rdata1=         0 rdata2=         0 Imm=         0 wb_sel=00 A_sel=0 bsel=1
+# wdata=0000003c factorial=        24 num=         4 aluout=        56 aluctrl= 0
+# PC=        56 rdata1=         0 rdata2=         0 Imm=         0 wb_sel=00 A_sel=0 bsel=1
+# wdata=0000003c factorial=        24 num=         4 aluout=        56 aluctrl= 0
+# PC=        56 rdata1=         0 rdata2=         0 Imm=         0 wb_sel=00 A_sel=0 bsel=1
+# wdata=0000003c factorial=        24 num=         4 aluout=        56 aluctrl= 0
+# PC=        56 rdata1=         0 rdata2=         0 Imm=         0 wb_sel=00 A_sel=0 bsel=1
+# wdata=0000003c factorial=        24 num=         4 aluout=        56 aluctrl= 0
+# PC=        56 rdata1=         0 rdata2=         0 Imm=         0 wb_sel=00 A_sel=0 bsel=1
+# wdata=0000003c factorial=        24 num=         4 aluout=        56 aluctrl= 0
+# PC=        56 rdata1=         0 rdata2=         0 Imm=         0 wb_sel=00 A_sel=0 bsel=1
+# wdata=0000003c factorial=        24 num=         4 aluout=        56 aluctrl= 0
+# PC=        56 rdata1=         0 rdata2=         0 Imm=         0 wb_sel=00 A_sel=0 bsel=1
+# wdata=0000003c factorial=        24 num=         4 aluout=        56 aluctrl= 0
+# PC=        56 rdata1=         0 rdata2=         0 Imm=         0 wb_sel=00 A_sel=0 bsel=1
+# wdata=0000003c factorial=        24 num=         4 aluout=        56 aluctrl= 0
+# PC=        56 rdata1=         0 rdata2=         0 Imm=         0 wb_sel=00 A_sel=0 bsel=1
+# wdata=0000003c factorial=        24 num=         4 aluout=        56 aluctrl= 0
+# PC=        56 rdata1=         0 rdata2=         0 Imm=         0 wb_sel=00 A_sel=0 bsel=1
+# wdata=0000003c factorial=        24 num=         4 aluout=        56 aluctrl= 0
+# PC=        56 rdata1=         0 rdata2=         0 Imm=         0 wb_sel=00 A_sel=0 bsel=1
+# wdata=0000003c factorial=        24 num=         4 aluout=        56 aluctrl= 0
+# PC=        56 rdata1=         0 rdata2=         0 Imm=         0 wb_sel=00 A_sel=0 bsel=1
+# wdata=0000003c factorial=        24 num=         4 aluout=        56 aluctrl= 0
+# PC=        56 rdata1=         0 rdata2=         0 Imm=         0 wb_sel=00 A_sel=0 bsel=1
+# wdata=0000003c factorial=        24 num=         4 aluout=        56 aluctrl= 0
+# PC=        56 rdata1=         0 rdata2=         0 Imm=         0 wb_sel=00 A_sel=0 bsel=1
+# wdata=0000003c factorial=        24 num=         4 aluout=        56 aluctrl= 0
+# PC=        56 rdata1=         0 rdata2=         0 Imm=         0 wb_sel=00 A_sel=0 bsel=1
+# wdata=0000003c factorial=        24 num=         4 aluout=        56 aluctrl= 0
+# PC=        56 rdata1=         0 rdata2=         0 Imm=         0 wb_sel=00 A_sel=0 bsel=1
+# wdata=0000003c factorial=        24 num=         4 aluout=        56 aluctrl= 0
+# PC=        56 rdata1=         0 rdata2=         0 Imm=         0 wb_sel=00 A_sel=0 bsel=1
+# wdata=0000003c factorial=        24 num=         4 aluout=        56 aluctrl= 0
+# PC=        56 rdata1=         0 rdata2=         0 Imm=         0 wb_sel=00 A_sel=0 bsel=1
+# wdata=0000003c factorial=        24 num=         4 aluout=        56 aluctrl= 0
+# PC=        56 rdata1=         0 rdata2=         0 Imm=         0 wb_sel=00 A_sel=0 bsel=1
+# wdata=0000003c factorial=        24 num=         4 aluout=        56 aluctrl= 0
+# PC=        56 rdata1=         0 rdata2=         0 Imm=         0 wb_sel=00 A_sel=0 bsel=1
+# wdata=0000003c factorial=        24 num=         4 aluout=        56 aluctrl= 0
+# PC=        56 rdata1=         0 rdata2=         0 Imm=         0 wb_sel=00 A_sel=0 bsel=1
+# wdata=0000003c factorial=        24 num=         4 aluout=        56 aluctrl= 0
+# PC=        56 rdata1=         0 rdata2=         0 Imm=         0 wb_sel=00 A_sel=0 bsel=1
+# wdata=0000003c factorial=        24 num=         4 aluout=        56 aluctrl= 0
+# PC=        56 rdata1=         0 rdata2=         0 Imm=         0 wb_sel=00 A_sel=0 bsel=1
+# wdata=0000003c factorial=        24 num=         4 aluout=        56 aluctrl= 0
+# PC=        56 rdata1=         0 rdata2=         0 Imm=         0 wb_sel=00 A_sel=0 bsel=1
+# wdata=0000003c factorial=        24 num=         4 aluout=        56 aluctrl= 0
+# PC=        56 rdata1=         0 rdata2=         0 Imm=         0 wb_sel=00 A_sel=0 bsel=1
+# wdata=0000003c factorial=        24 num=         4 aluout=        56 aluctrl= 0
 # ** Note: $finish    : d:/Study/6th semester/Computer Architecture/Lab6/RISC_V_tb.sv(26)
-#    Time: 11 ns  Iteration: 1  Instance: /RISC_V_tb
-# End time: 00:41:04 on Mar 30,2023, Elapsed time: 0:00:02
+#    Time: 201 ns  Iteration: 1  Instance: /RISC_V_tb
+# End time: 01:37:52 on Mar 30,2023, Elapsed time: 0:00:02
 # Errors: 0, Warnings: 0
