@@ -1,6 +1,6 @@
 # vsim -voptargs="+acc" -c RISC_V_tb -do "run -all; exit" 
-# Start time: 10:20:10 on Mar 29,2023
-# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Start time: 00:41:02 on Mar 30,2023
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
 # //  ModelSim SE-64 10.6d Feb 24 2018
 # //
 # //  Copyright 1991-2018 Mentor Graphics Corporation
@@ -27,40 +27,35 @@
 # Loading work.data_mem(fast)
 # Loading work.Branch_block(fast)
 # run -all
-# PC=         x rdata1=xxxxxxxx rdata2=xxxxxxxx Imm=xxxxxxxx wb_sel=xx A_sel=x bsel=x
-# wdata=xxxxxxxx result=00000003 aluout=         x data_mem=xxxxxxxx aluctrl= x
+# PC=xxxxxxxx rdata1=xxxxxxxx rdata2=xxxxxxxx Imm=xxxxxxxx wb_sel=xx A_sel=x bsel=x
+# wdata=xxxxxxxx regfile=0000000a datamem=xxxxxxxx aluout=         x aluctrl= x
 # -------------------------------------------------------------------------
-# PC=         0 rdata1=00000003 rdata2=0000000a Imm=12345000 wb_sel=01 A_sel=x bsel=1
-# wdata=12345000 result=12345000 aluout= 305418240 data_mem=00000000 aluctrl=10
+# PC=00000000 rdata1=00000000 rdata2=00000000 Imm=00005000 wb_sel=01 A_sel=x bsel=1
+# wdata=00005000 regfile=00005000 datamem=00000000 aluout=     20480 aluctrl=10
 # -------------------------------------------------------------------------
-# PC=         4 rdata1=12345678 rdata2=00000003 Imm=00000678 wb_sel=01 A_sel=1 bsel=1
-# wdata=12345cf0 result=12345678 aluout= 305421552 data_mem=00000000 aluctrl= 0
+# byte operatio 
+# byte operatio 
+# byte operatio 
+# PC=00000004 rdata1=00005682 rdata2=00000016 Imm=00000682 wb_sel=01 A_sel=1 bsel=1
+# wdata=00005d04 regfile=00005682 datamem=00000000 aluout=     23812 aluctrl= 0
 # -------------------------------------------------------------------------
-# PC=         8 rdata1=xxxxxxxx rdata2=xxxxxxxx Imm=xxxxxxxx wb_sel=xx A_sel=1 bsel=x
-# wdata=xxxxxxxx result=12345678 aluout=         x data_mem=00000000 aluctrl= 0
+# halfword operation 0  00005682
+# halfword operation 1  00005682
+# halfword operation 1  00005682
+# mask=1100 datawr=56820000
+# mask2=1
+# PC=00000008 rdata1=00000000 rdata2=00005682 Imm=00000003 wb_sel=xx A_sel=1 bsel=1
+# wdata=xxxxxxxx regfile=00005682 datamem=56820000 aluout=         3 aluctrl= 0
 # -------------------------------------------------------------------------
-# PC=        12 rdata1=xxxxxxxx rdata2=xxxxxxxx Imm=xxxxxxxx wb_sel=xx A_sel=1 bsel=x
-# wdata=xxxxxxxx result=12345678 aluout=         x data_mem=00000000 aluctrl= 0
+# word operation 
+# word operation 
+# PC=0000000c rdata1=00000000 rdata2=56820000 Imm=00000003 wb_sel=10 A_sel=1 bsel=1
+# wdata=56820000 regfile=56820000 datamem=56820000 aluout=         3 aluctrl= 0
 # -------------------------------------------------------------------------
-# PC=        16 rdata1=xxxxxxxx rdata2=xxxxxxxx Imm=xxxxxxxx wb_sel=xx A_sel=1 bsel=x
-# wdata=xxxxxxxx result=12345678 aluout=         x data_mem=00000000 aluctrl= 0
-# -------------------------------------------------------------------------
-# PC=        20 rdata1=xxxxxxxx rdata2=xxxxxxxx Imm=xxxxxxxx wb_sel=xx A_sel=1 bsel=x
-# wdata=xxxxxxxx result=12345678 aluout=         x data_mem=00000000 aluctrl= 0
-# -------------------------------------------------------------------------
-# PC=        24 rdata1=xxxxxxxx rdata2=xxxxxxxx Imm=xxxxxxxx wb_sel=xx A_sel=1 bsel=x
-# wdata=xxxxxxxx result=12345678 aluout=         x data_mem=00000000 aluctrl= 0
-# -------------------------------------------------------------------------
-# PC=        28 rdata1=xxxxxxxx rdata2=xxxxxxxx Imm=xxxxxxxx wb_sel=xx A_sel=1 bsel=x
-# wdata=xxxxxxxx result=12345678 aluout=         x data_mem=00000000 aluctrl= 0
-# -------------------------------------------------------------------------
-# PC=        32 rdata1=xxxxxxxx rdata2=xxxxxxxx Imm=xxxxxxxx wb_sel=xx A_sel=1 bsel=x
-# wdata=xxxxxxxx result=12345678 aluout=         x data_mem=00000000 aluctrl= 0
-# -------------------------------------------------------------------------
-# PC=        36 rdata1=xxxxxxxx rdata2=xxxxxxxx Imm=xxxxxxxx wb_sel=xx A_sel=1 bsel=x
-# wdata=xxxxxxxx result=12345678 aluout=         x data_mem=00000000 aluctrl= 0
+# PC=00000010 rdata1=xxxxxxxx rdata2=xxxxxxxx Imm=xxxxxxxx wb_sel=xx A_sel=1 bsel=x
+# wdata=xxxxxxxx regfile=56820000 datamem=56820000 aluout=         x aluctrl= 0
 # -------------------------------------------------------------------------
 # ** Note: $finish    : d:/Study/6th semester/Computer Architecture/Lab6/RISC_V_tb.sv(26)
-#    Time: 21 ns  Iteration: 1  Instance: /RISC_V_tb
-# End time: 10:20:12 on Mar 29,2023, Elapsed time: 0:00:02
+#    Time: 11 ns  Iteration: 1  Instance: /RISC_V_tb
+# End time: 00:41:04 on Mar 30,2023, Elapsed time: 0:00:02
 # Errors: 0, Warnings: 0

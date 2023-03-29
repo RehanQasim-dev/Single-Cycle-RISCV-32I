@@ -4,7 +4,7 @@ module RISC_V (
     input logic clk,
     input logic rst
 );
-  logic [31:0] instruction, ALU_o, wdata_mem, rdata2;
+  logic [31:0] instruction, wdata_mem, rdata2;
   logic reg_wr, A_sel, PC_sel, B_sel, br_taken, mem_wr;
   logic [2:0] load_ctrl;
   logic [1:0] wb_sel;

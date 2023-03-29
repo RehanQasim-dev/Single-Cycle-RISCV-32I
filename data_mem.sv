@@ -8,10 +8,10 @@ module data_mem (
     input logic [2:0] load_ctrl,
     output logic [31:0] mem_data
 );
-  logic [31:0] mem_data_read;
+  logic [31:0] mem_data_read, debug;
   logic [31:0] mem[0:31];
-  assign mem_data_read = data_wr ? '0 : mem[addr[6:2]];
-
+  assign mem_data_read = mem_wr ? '0 : mem[addr[6:2]];
+  assign debug = mem[0];
   always_ff @(posedge clk) begin
     if (rst) mem <= '{default: '0};
     else if (mem_wr) begin

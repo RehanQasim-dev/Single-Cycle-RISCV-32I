@@ -14,6 +14,7 @@ module LS_controller (
   always_comb begin
     case (func3)
       b: begin
+        $display("byte operatio ");
         case (address)
           2'b00: begin
             mask = 4'b0001;
@@ -21,15 +22,15 @@ module LS_controller (
           end
           2'b01: begin
             mask = 4'b0010;
-            wdata_mem = {{16{1'b0}}, {rdata2[15:8]}, {8{1'b0}}};
+            wdata_mem = {{16{1'b0}}, {rdata2[7:0]}, {8{1'b0}}};
           end
           2'b10: begin
             mask = 4'b0100;
-            wdata_mem = {{8{1'b0}}, {rdata2[23:16]}, {16{1'b0}}};
+            wdata_mem = {{8{1'b0}}, {rdata2[7:0]}, {16{1'b0}}};
           end
           2'b11: begin
             mask = 4'b1000;
-            wdata_mem = {{rdata2[31:24]}, {24{1'b0}}};
+            wdata_mem = {{rdata2[7:0]}, {24{1'b0}}};
           end
           default: begin
             mask = 'x;
@@ -39,6 +40,7 @@ module LS_controller (
         load_ctrl = 3'b000;
       end
       h: begin
+        $display("halfword operation %d  %h", address[1], rdata2);
         case (address[1])
           0: begin
             mask = 4'b0011;
@@ -46,7 +48,7 @@ module LS_controller (
           end
           1: begin
             mask = 4'b1100;
-            wdata_mem = {{rdata2[31:16]}, {16{1'b0}}};
+            wdata_mem = {{rdata2[15:0]}, {16{1'b0}}};
           end
           default: begin
             mask = 'x;
@@ -56,7 +58,8 @@ module LS_controller (
         load_ctrl = 3'b001;
       end
       w: begin
-        mask = 'x;
+        $display("word operation ");
+        mask = 4'b1111;
         wdata_mem = rdata2;
         load_ctrl = 3'b010;
       end

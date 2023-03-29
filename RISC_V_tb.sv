@@ -22,22 +22,30 @@ module RISC_V_tb;
     rst = 1;
     @(posedge clk);
     rst = 0;
-    repeat (10) @(posedge clk);
+    repeat (5) @(posedge clk);
     $finish;
   end
 
   //Monitor values at posedge
   always @(posedge clk) begin
+    // $display(
+    //     "PC=%d rdata1=%d rdata2=%d Imm=%d wb_sel=%b A_sel=%b bsel=%b\nwdata=%h factorial=%d num=%d aluout=%d aluctrl=%d",
+    //     RISC_R_instance.data_path_instance.PC, RISC_R_instance.data_path_instance.rdata1,
+    //     RISC_R_instance.data_path_instance.rdata2, RISC_R_instance.data_path_instance.imm,
+    //     RISC_R_instance.data_path_instance.wb_sel, RISC_R_instance.data_path_instance.A_sel,
+    //     RISC_R_instance.data_path_instance.B_sel, RISC_R_instance.data_path_instance.wdata,
+    //     RISC_R_instance.data_path_instance.Regfile_instance.mem[10],
+    //     RISC_R_instance.data_path_instance.Regfile_instance.mem[11],
+    //     RISC_R_instance.data_path_instance.ALU_o, RISC_R_instance.data_path_instance.ALUctrl);
     $display(
-        "PC=%d rdata1=%h rdata2=%h Imm=%h wb_sel=%b A_sel=%b bsel=%b\nwdata=%h result=%h aluout=%d data_mem=%h aluctrl=%d",
+        "PC=%h rdata1=%h rdata2=%h Imm=%h wb_sel=%b A_sel=%b bsel=%b\nwdata=%h regfile=%h datamem=%h aluout=%d aluctrl=%d",
         RISC_R_instance.data_path_instance.PC, RISC_R_instance.data_path_instance.rdata1,
         RISC_R_instance.data_path_instance.rdata2, RISC_R_instance.data_path_instance.imm,
         RISC_R_instance.data_path_instance.wb_sel, RISC_R_instance.data_path_instance.A_sel,
         RISC_R_instance.data_path_instance.B_sel, RISC_R_instance.data_path_instance.wdata,
-        RISC_R_instance.data_path_instance.Regfile_instance.mem[12],
-        RISC_R_instance.data_path_instance.ALU_o,
+        RISC_R_instance.data_path_instance.Regfile_instance.mem[3],
         RISC_R_instance.data_path_instance.data_mem_instance.mem[0],
-        RISC_R_instance.data_path_instance.ALUctrl);
+        RISC_R_instance.data_path_instance.ALU_o, RISC_R_instance.data_path_instance.ALUctrl);
     $display("-------------------------------------------------------------------------");
   end
   initial begin
