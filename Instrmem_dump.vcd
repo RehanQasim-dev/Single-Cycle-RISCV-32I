@@ -1,0 +1,99 @@
+$date
+	Tue Feb 21 12:42:08 2023
+$end
+$version
+	ModelSim Version 10.6d
+$end
+$timescale
+	1ns
+$end
+
+$scope module Instrmem_tb $end
+
+$scope module DUT $end
+$var wire 1 ! rst $end
+$var wire 1 " addr_i [31] $end
+$var wire 1 # addr_i [30] $end
+$var wire 1 $ addr_i [29] $end
+$var wire 1 % addr_i [28] $end
+$var wire 1 & addr_i [27] $end
+$var wire 1 ' addr_i [26] $end
+$var wire 1 ( addr_i [25] $end
+$var wire 1 ) addr_i [24] $end
+$var wire 1 * addr_i [23] $end
+$var wire 1 + addr_i [22] $end
+$var wire 1 , addr_i [21] $end
+$var wire 1 - addr_i [20] $end
+$var wire 1 . addr_i [19] $end
+$var wire 1 / addr_i [18] $end
+$var wire 1 0 addr_i [17] $end
+$var wire 1 1 addr_i [16] $end
+$var wire 1 2 addr_i [15] $end
+$var wire 1 3 addr_i [14] $end
+$var wire 1 4 addr_i [13] $end
+$var wire 1 5 addr_i [12] $end
+$var wire 1 6 addr_i [11] $end
+$var wire 1 7 addr_i [10] $end
+$var wire 1 8 addr_i [9] $end
+$var wire 1 9 addr_i [8] $end
+$var wire 1 : addr_i [7] $end
+$var wire 1 ; addr_i [6] $end
+$var wire 1 < addr_i [5] $end
+$var wire 1 = addr_i [4] $end
+$var wire 1 > addr_i [3] $end
+$var wire 1 ? addr_i [2] $end
+$var wire 1 @ addr_i [1] $end
+$var wire 1 A addr_i [0] $end
+$var reg 32 B instruction_o [31:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b10010000000010010001101000001 B
+0A
+0@
+1?
+0>
+0=
+0<
+0;
+0:
+09
+08
+07
+06
+05
+04
+03
+02
+01
+00
+0/
+0.
+0-
+0,
+0+
+0*
+0)
+0(
+0'
+0&
+0%
+0$
+0#
+0"
+x!
+$end
+#2
+0?
+1>
+b10010000000010010001101000010 B
+#4
+1?
+0>
+1=
+1;
+1:
+17
+b10010000000010010001101000001 B

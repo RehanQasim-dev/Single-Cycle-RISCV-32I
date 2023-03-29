@@ -1,0 +1,66 @@
+# vsim -voptargs="+acc" -c RISC_V_tb -do "run -all; exit" 
+# Start time: 10:20:10 on Mar 29,2023
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# //  ModelSim SE-64 10.6d Feb 24 2018
+# //
+# //  Copyright 1991-2018 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  ModelSim SE-64 and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# Loading sv_std.std
+# Loading work.RISC_V_tb(fast)
+# Loading work.RISC_V(fast)
+# Loading work.Controller(fast)
+# Loading work.LS_controller(fast)
+# Loading work.data_path(fast)
+# Loading work.Regfile(fast)
+# Loading work.ALU(fast)
+# Loading work.mux16x1(fast)
+# Loading work.Instrmem(fast)
+# Loading work.data_mem(fast)
+# Loading work.Branch_block(fast)
+# run -all
+# PC=         x rdata1=xxxxxxxx rdata2=xxxxxxxx Imm=xxxxxxxx wb_sel=xx A_sel=x bsel=x
+# wdata=xxxxxxxx result=00000003 aluout=         x data_mem=xxxxxxxx aluctrl= x
+# -------------------------------------------------------------------------
+# PC=         0 rdata1=00000003 rdata2=0000000a Imm=12345000 wb_sel=01 A_sel=x bsel=1
+# wdata=12345000 result=12345000 aluout= 305418240 data_mem=00000000 aluctrl=10
+# -------------------------------------------------------------------------
+# PC=         4 rdata1=12345678 rdata2=00000003 Imm=00000678 wb_sel=01 A_sel=1 bsel=1
+# wdata=12345cf0 result=12345678 aluout= 305421552 data_mem=00000000 aluctrl= 0
+# -------------------------------------------------------------------------
+# PC=         8 rdata1=xxxxxxxx rdata2=xxxxxxxx Imm=xxxxxxxx wb_sel=xx A_sel=1 bsel=x
+# wdata=xxxxxxxx result=12345678 aluout=         x data_mem=00000000 aluctrl= 0
+# -------------------------------------------------------------------------
+# PC=        12 rdata1=xxxxxxxx rdata2=xxxxxxxx Imm=xxxxxxxx wb_sel=xx A_sel=1 bsel=x
+# wdata=xxxxxxxx result=12345678 aluout=         x data_mem=00000000 aluctrl= 0
+# -------------------------------------------------------------------------
+# PC=        16 rdata1=xxxxxxxx rdata2=xxxxxxxx Imm=xxxxxxxx wb_sel=xx A_sel=1 bsel=x
+# wdata=xxxxxxxx result=12345678 aluout=         x data_mem=00000000 aluctrl= 0
+# -------------------------------------------------------------------------
+# PC=        20 rdata1=xxxxxxxx rdata2=xxxxxxxx Imm=xxxxxxxx wb_sel=xx A_sel=1 bsel=x
+# wdata=xxxxxxxx result=12345678 aluout=         x data_mem=00000000 aluctrl= 0
+# -------------------------------------------------------------------------
+# PC=        24 rdata1=xxxxxxxx rdata2=xxxxxxxx Imm=xxxxxxxx wb_sel=xx A_sel=1 bsel=x
+# wdata=xxxxxxxx result=12345678 aluout=         x data_mem=00000000 aluctrl= 0
+# -------------------------------------------------------------------------
+# PC=        28 rdata1=xxxxxxxx rdata2=xxxxxxxx Imm=xxxxxxxx wb_sel=xx A_sel=1 bsel=x
+# wdata=xxxxxxxx result=12345678 aluout=         x data_mem=00000000 aluctrl= 0
+# -------------------------------------------------------------------------
+# PC=        32 rdata1=xxxxxxxx rdata2=xxxxxxxx Imm=xxxxxxxx wb_sel=xx A_sel=1 bsel=x
+# wdata=xxxxxxxx result=12345678 aluout=         x data_mem=00000000 aluctrl= 0
+# -------------------------------------------------------------------------
+# PC=        36 rdata1=xxxxxxxx rdata2=xxxxxxxx Imm=xxxxxxxx wb_sel=xx A_sel=1 bsel=x
+# wdata=xxxxxxxx result=12345678 aluout=         x data_mem=00000000 aluctrl= 0
+# -------------------------------------------------------------------------
+# ** Note: $finish    : d:/Study/6th semester/Computer Architecture/Lab6/RISC_V_tb.sv(26)
+#    Time: 21 ns  Iteration: 1  Instance: /RISC_V_tb
+# End time: 10:20:12 on Mar 29,2023, Elapsed time: 0:00:02
+# Errors: 0, Warnings: 0
