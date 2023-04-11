@@ -9,7 +9,6 @@ module ALU (
       and_res, or_res, xor_res, add_sub_res, SLT_res, SLTU_res, t, SLL_res, SRL_res, SRA_res;
   logic [31:0] mux1_o;
   logic C_out, N, V, W, C;  //Flags
-  // assign zero_o = ~|result_o;
   assign N = add_sub_res[31];
   assign C = C_out;
   assign V = (add_sub_res[31] ^ a_in[31]) & (~(a_in[31] ^ b_in[31] ^ ALUctrl[0]));
@@ -26,7 +25,7 @@ module ALU (
   assign SRA_res = a_in >>> b_in;
   assign SRL_res = a_in >> b_in;
   assign SLL_res = a_in << b_in;
-  mux16x1 ALU_mux (
+  mux11x1 ALU_mux (
       .i1 (add_sub_res),
       .i2 (add_sub_res),
       .i3 (SLL_res),

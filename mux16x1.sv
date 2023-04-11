@@ -1,4 +1,4 @@
-module mux16x1 (
+module mux11x1 (
     input  logic [31:0] i1,
     i2,
     i3,

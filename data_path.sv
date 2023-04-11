@@ -109,7 +109,6 @@ module data_path (
       lui_type, auipc_type: imm = {{instruction[31:12]}, {12{1'b0}}};
       default: begin
         imm = 'x;
-        $display("default here!! %b", instruction[7:2]);
       end
     endcase
   end
