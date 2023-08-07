@@ -15,19 +15,15 @@ module RISC_V (
       .clk(clk),
       .rst(rst),
       .instruction(instruction),
-      .mem_col(mem_col),
       .b_taken(br_taken),
-      .wdata_mem(wdata_mem),
       .ALUctrl(ALUctrl),
       .load_ctrl(load_ctrl),
-      .mask(mask),
       .mem_wr(mem_wr),
       .A_sel(A_sel),
       .B_sel(B_sel),
       .wb_sel(wb_sel),
       .reg_wr(reg_wr),
-      .PC_sel(PC_sel),
-      .rdata2(rdata2)
+      .PC_sel(PC_sel)
 
   );
   data_path data_path_instance (
@@ -39,14 +35,9 @@ module RISC_V (
       .mem_wr(mem_wr),
       .PC_sel(PC_sel),
       .wb_sel(wb_sel),
-      .mask(mask),
       .load_ctrl(load_ctrl),
       .ALUctrl(ALUctrl),
-      .wdata_mem(wdata_mem),
       .instruction(instruction),
-      .mem_col(mem_col),
-      .b_taken(br_taken),
-      .rdata2(rdata2)
+      .b_taken(br_taken)
   );
-
 endmodule

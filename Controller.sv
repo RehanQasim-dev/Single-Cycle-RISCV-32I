@@ -3,19 +3,15 @@ module Controller (
     input clk,
     input rst,
     input logic [31:0] instruction,
-    input logic [1:0] mem_col,
     input logic b_taken,
-    output logic [31:0] wdata_mem,
     output logic [3:0] ALUctrl,
     output logic [2:0] load_ctrl,
-    output logic [3:0] mask,
     output logic mem_wr,
     output logic A_sel,
     B_sel,
     reg_wr,
     PC_sel,
-    output logic [1:0] wb_sel,
-    input logic [31:0] rdata2
+    output logic [1:0] wb_sel
 );
   localparam R_type = 5'b01100;
   localparam I_type = 5'b00100;
@@ -32,14 +28,8 @@ module Controller (
   assign func3  = instruction[14:12];
   assign opcode = instruction[6:0];
   assign func7  = instruction[30];
-  LS_controller LS_controller_instance (
-      .func3(func3),
-      .address(mem_col),
-      .rdata2(rdata2),
-      .wdata_mem(wdata_mem),
-      .load_ctrl(load_ctrl),
-      .mask(mask)
-  );
+
+
   always_comb begin
     case (instruction[6:2])
       R_type: begin
@@ -158,10 +148,12 @@ module Controller (
         PC_sel  = 1'b0;
       end
       default: begin
-        mem_wr = 'x;
-        B_sel  = 'x;
-        wb_sel = 'x;
-        reg_wr = 'x;
+        mem_wr  = 'x;
+        B_sel   = 'x;
+        wb_sel  = 'x;
+        reg_wr  = 'x;
+        ALUctrl = 'x;
+        PC_sel  = 'x;
       end
     endcase
   end

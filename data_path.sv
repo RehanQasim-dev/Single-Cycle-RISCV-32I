@@ -12,14 +12,10 @@ module data_path (
     mem_wr,
     PC_sel,
     input logic [1:0] wb_sel,
-    input logic [3:0] mask,
     input logic [2:0] load_ctrl,
     input logic [3:0] ALUctrl,
-    input logic [31:0] wdata_mem,
     output logic [31:0] instruction,
-    output logic [1:0] mem_col,
-    output logic b_taken,
-    output logic [31:0] rdata2
+    output logic b_taken
 );
   localparam I_type = 5'b00100;
   localparam Load_type = 5'b00000;
@@ -30,7 +26,7 @@ module data_path (
   localparam lui_type = 5'b01101;
   localparam auipc_type = 5'b00101;
   logic [31:0] instruction_addr;
-  logic [31:0] wdata, ALUresult, ReadData, rdata1;
+  logic [31:0] wdata, ALUresult, ReadData, rdata1, rdata2;
   logic [31:0] PC, PC_mux_o;
   logic [4:0] raddr1, raddr2, waddr;
   logic [31:0] rd2;
@@ -39,6 +35,7 @@ module data_path (
   logic [31:0] ALU_o;
   logic [31:0] mem_data;
   logic [31:0] imm, ALU_op_b, ALU_op_a;
+  logic [1:0] mem_col;
   assign mem_col = ALU_o[1:0];
   assign func3   = instruction[14:12];
   assign raddr1  = instruction[19:15];
@@ -85,15 +82,14 @@ module data_path (
       .addr_i(PC),
       .instruction_o(instruction)
   );
-
   data_mem data_mem_instance (
       .clk(clk),
       .rst(rst),
       .mem_wr(mem_wr),
       .addr(ALU_o),
-      .data_wr(wdata_mem),
-      .mask(mask),
-      .load_ctrl(load_ctrl),
+      .data_wr(rdata2),
+      .func3(func3),
+      .mem_col(mem_col),
       .mem_data(mem_data)
   );
   //Immidiate generation

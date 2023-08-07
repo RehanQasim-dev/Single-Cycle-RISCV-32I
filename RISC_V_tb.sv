@@ -28,9 +28,10 @@ module RISC_V_tb;
 
   //Monitor values at posedge
   always @(posedge clk) begin
-    $display("PC=%d y=%d x=%d", RISC_R_instance.data_path_instance.PC,
-             RISC_R_instance.data_path_instance.Regfile_instance.mem[2],
-             RISC_R_instance.data_path_instance.Regfile_instance.mem[1]);
+    $display("PC=%d x3=%h wdata=%h mem=%h", RISC_R_instance.data_path_instance.PC,
+             RISC_R_instance.data_path_instance.Regfile_instance.mem[3],
+             RISC_R_instance.data_path_instance.wdata,
+             RISC_R_instance.data_path_instance.data_mem_instance.mem[0]);
   end
   initial begin
     $dumpfile("RISC_R_dump.vcd");
